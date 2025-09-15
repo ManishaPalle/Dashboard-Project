@@ -1,0 +1,123 @@
+:root{
+  --bg:#f1f5f9;
+  --panel:#0f1724;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0f1724;
+  --primary:#0b69ff;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,#f6f8fa 0%, #eef2f6 100%);
+  color:#0b1724;
+  padding:18px;
+}
+
+/* header */
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+.header .left {
+  display:flex; flex-direction:column;
+}
+.header h1{ margin:0; font-size:18px }
+.header .breadcrumbs { color:var(--muted); font-size:13px }
+
+/* search area */
+.controls {
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:16px;
+}
+.search {
+  flex:1;
+  display:flex;
+}
+.search input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(11,17,36,0.06);
+  background:white;
+}
+
+/* layout */
+.container {
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:16px;
+}
+
+/* categories grid */
+.categories {
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:16px;
+}
+
+/* category card */
+.category {
+  background:var(--card);
+  border-radius:10px;
+  padding:14px;
+  box-shadow: 0 6px 18px rgba(11,17,36,0.06);
+}
+.category .title-row{
+  display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;
+}
+.category .widgets {
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:12px;
+}
+
+/* widget card */
+.widget {
+  background:#fbfdff;
+  border-radius:8px;
+  padding:10px;
+  min-height:110px;
+  position:relative;
+  border:1px solid rgba(11,17,36,0.04);
+}
+.widget h3{ margin:0 0 6px 0; font-size:14px }
+.widget p{ margin:0; color:var(--muted); font-size:13px }
+.widget .remove {
+  position:absolute; right:8px; top:8px; background:transparent; border:0; cursor:pointer; color:var(--muted);
+}
+
+/* modal overlay + panel (we position panel right) */
+.h-overlay {
+  position:fixed; inset:0; background: rgba(8,10,15,0.45); display:flex; justify-content:flex-end; z-index:60;
+}
+.h-panel {
+  background:white; width:420px; max-width:100%; height:100vh; padding:18px; box-shadow: -20px 0 40px rgba(8,10,15,0.12);
+  display:flex; flex-direction:column;
+}
+.h-panel .modal-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.h-panel .tabs { display:flex; gap:8px; margin-bottom:10px; }
+.tab-btn {
+  padding:8px 12px; border-radius:8px; border:1px solid rgba(11,17,36,0.06); background:transparent; cursor:pointer;
+}
+.tab-btn.active { background:#eef2ff; border-color: rgba(11,17,36,0.08); }
+
+/* list of widget checkboxes in modal */
+.widget-row{ display:flex; align-items:center; justify-content:space-between; padding:10px 6px; border-bottom:1px solid rgba(11,17,36,0.03) }
+.widget-row label{ display:flex; align-items:center; gap:8px; font-size:14px; cursor:pointer; }
+.modal-actions { margin-top:auto; display:flex; justify-content:flex-end; gap:8px; }
+.btn { padding:8px 12px; border-radius:8px; border:0; cursor:pointer; }
+.btn.primary { background:var(--primary); color:white; }
+.btn.ghost { background:transparent; border:1px solid rgba(11,17,36,0.06) }
+
+/* responsive */
+@media (max-width:900px){
+  .categories{ grid-template-columns: 1fr }
+}
