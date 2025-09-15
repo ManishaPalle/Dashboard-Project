@@ -1,12 +1,61 @@
-# React + Vite
+# 📊 Dashboard Frontend Trainee Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based **Dashboard  Frontend Trainee Project** with categories and widgets.  
+The project uses **React, Redux, and JSON data** to dynamically manage widgets.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- Add and manage widgets dynamically
+- Organized categories
+- Redux store for state management
+- Responsive frontend with modern UI
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Prerequisites
+Make sure you have the following installed:
+
+- [Node.js (LTS version recommended)](https://nodejs.org/)
+- npm (comes with Node.js)
+
+Check versions:
+```bash
+node -v
+npm -v
+
+Installation & Setup
+1. Clone the repository
+
+      - git clone https://github.com/your-username/your-repo-name.git
+      - cd your-repo-name
+
+2. Install dependencies
+      npm install
+
+3. Run the development server
+      npm start
+
+
+
+   Project Structure
+
+    src/
+ ├── components/           # UI Components
+ │   ├── AddWidgetModal.js # Modal to add widgets
+ │   ├── Category.js       # Component for each category
+ │   ├── Dashboard.js      # Main dashboard layout
+ │   └── Widget.js         # Individual widget component
+ │
+ ├── features/             # Redux slices
+ │   └── dashboardSlice.js
+ │
+ ├── data/                 # JSON/Data files
+ │   └── widgetPool.js
+ │
+ ├── App.js                # Root React component
+ ├── index.js              # React entry point
+ ├── store.js              # Redux store setup
+ └── index.css             # Global styles
+
+
